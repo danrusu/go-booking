@@ -15,13 +15,15 @@
  - [models](./webservice/models) 
 
 ```
-git clone https://github.com/danrusu/learn-go-webservice.git
-cd learn-go-webservice
+git clone https://github.com/danrusu/go-booking.git
+cd go-booking
 go build .
-learn-go-webservice.exe
+go-booking.exe
 ```
 
 ### 3. Test webservice via Postman
-learn-go-webservice.postman_collection.json
+ - [(test collection](go-booking.postman_collection.json)
+ - [environment](go-booking.postman_environment.json)
+
 
 

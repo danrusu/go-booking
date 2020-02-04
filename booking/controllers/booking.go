@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/danrusu/learn-go-webservice/booking/models"
+	"github.com/danrusu/go-booking/booking/models"
 )
 
 type bookingController struct {

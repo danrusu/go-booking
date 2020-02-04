@@ -1,3 +1,3 @@
-module github.com/danrusu/learn-go-webservice
+module github.com/danrusu/go-booking
 
 go 1.13

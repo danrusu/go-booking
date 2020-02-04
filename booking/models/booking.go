@@ -10,9 +10,10 @@ type Booking struct {
 	FirstName       string
 	LastName        string
 	Price           float32
+	Currency        string
 	DepositPaid     bool
-	Checkin         string
-	Checkout        string
+	CheckIn         string
+	CheckOut        string
 	AdditionalNeeds string
 }
 

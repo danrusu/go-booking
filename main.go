@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/danrusu/learn-go-webservice/booking/controllers"
+	"github.com/danrusu/go-booking/booking/controllers"
 )
 
 func main() {
