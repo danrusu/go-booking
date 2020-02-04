@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "09215796-1bf6-49f6-9d52-19e019ddd773",
+		"name": "learn-go-webservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7dc89a8a-2f30-4f63-bff9-cd2c4cafa517",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Dan\", \n\t\"LastName\": \"Rusu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1943f039-24fc-4645-958c-3050b208f5f8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Tania\", \n\t\"LastName\": \"Rusu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7c3242d-b7e8-4d0e-be71-97d11fe5229a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"const expectedUsers = [",
+							"    {",
+							"        \"ID\": 1,",
+							"\t    \"FirstName\": \"Dan\", ",
+							"\t    \"LastName\": \"Rusu\"",
+							"        ",
+							"    },",
+							"    {",
+							"        \"ID\": 2,",
+							"\t    \"FirstName\": \"Tania\", ",
+							"\t    \"LastName\": \"Rusu\"",
+							"    }",
+							"];",
+							"    ",
+							"",
+							"pm.test(\"Response is correct\", () => {",
+							"   pm.expect(pm.response.json()).eql(expectedUsers); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check user 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b81a664f-8baa-4442-9409-e3c98073b3cc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const expectedUser = {",
+							"    \"ID\": 2,",
+							"\t\"FirstName\": \"Tania\", ",
+							"\t\"LastName\": \"Rusu\"",
+							"};",
+							"",
+							"pm.test(\"Response is correct\", () => {",
+							"   pm.expect(pm.response.json()).eql(expectedUser); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user by wrong id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e71c099-68d3-41b6-bbcd-282fddadd132",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/5",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user 1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ID\": 1,\n\t\"FirstName\": \"Maria\", \n\t\"LastName\": \"Rusu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check updated user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b81a664f-8baa-4442-9409-e3c98073b3cc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const expectedUser = {",
+							"    \"ID\": 1,",
+							"\t\"FirstName\": \"Maria\", ",
+							"\t\"LastName\": \"Rusu\"",
+							"};",
+							"",
+							"pm.test(\"Response is correct\", () => {",
+							"   pm.expect(pm.response.json()).eql(expectedUser); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b81a664f-8baa-4442-9409-e3c98073b3cc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7c3242d-b7e8-4d0e-be71-97d11fe5229a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"const expectedUsers = [",
+							"    {",
+							"        \"ID\": 2,",
+							"\t    \"FirstName\": \"Tania\", ",
+							"\t    \"LastName\": \"Rusu\"",
+							"    }",
+							"];",
+							"    ",
+							"",
+							"pm.test(\"Response is correct\", () => {",
+							"   pm.expect(pm.response.json()).eql(expectedUsers); ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

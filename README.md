@@ -9,11 +9,10 @@
 
 ```
 go build .
-learn-go.exe
+learn-go-webservice.exe
 ```
 
-Available end-points:
-- localhost:3000/users
-- localhost:3000/user/11
+### 3. Test webservice via Postman
+learn-go-webservice.postman_collection.json
 
 
