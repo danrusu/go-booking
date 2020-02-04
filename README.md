@@ -1,4 +1,4 @@
-# learn-go
+# learn-go-webservice
 
 ### 1. [GO Language Features Demos](./demo)
 [All can be tested online in GO playground](https://play.golang.org)
