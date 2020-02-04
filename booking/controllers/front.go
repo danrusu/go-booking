@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func registerControllers() {
+func RegisterControllers() {
 	controller := newBookingController()
 
 	http.Handle("/bookings", *controller)

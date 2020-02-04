@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	controllers.registerControllers()
+	controllers.RegisterControllers()
 	http.ListenAndServe(":1111", nil)
 
 }
