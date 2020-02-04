@@ -1,4 +1,5 @@
 # learn-go-webservice
+![Go](https://github.com/danrusu/learn-go-webservice/workflows/Go/badge.svg?branch=master&event=push)
 
 ### 0. Setup
  - [Go](https://golang.org/dl/)
