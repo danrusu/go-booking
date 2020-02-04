@@ -4,8 +4,8 @@
 [All can be tested online in GO playground](https://play.golang.org)
 
 ### 2. Demo web service 
- - [controlers](./controllers)
- - [models](./models) 
+ - [controlers](./webservice/controllers)
+ - [models](./webservice/models) 
 
 ```
 go build .
