@@ -1,4 +1,4 @@
-# learn-go-webservice
+# go-booking
 ![Go](https://github.com/danrusu/learn-go-webservice/workflows/Go/badge.svg?branch=master&event=push)
 
 ### 0. Setup
