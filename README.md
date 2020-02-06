@@ -4,7 +4,7 @@
 ### 0. Setup
  - [Go](https://golang.org/dl/)
  - [VSCode](https://code.visualstudio.com/download) + GO plugin
- - [Postman](https://www.postman.com/downloads/)
+ - [Postman](https://www.postman.com/downloads/).
 
 
 ### 1. [GO Language Features Demos](./demo)
