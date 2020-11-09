@@ -22,7 +22,7 @@ go-booking.exe
 ```
 
 ### 3. Test webservice via Postman
- - [(test collection](go-booking.postman_collection.json)
+ - [test collection](go-booking.postman_collection.json)
  - [environment](go-booking.postman_environment.json)
 
 
